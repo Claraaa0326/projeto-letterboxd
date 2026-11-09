@@ -26,10 +26,10 @@ void biblioteca() {
         }
 
 
-void review() {
+void review() { //funcao que le e armazena as reviews
 struct info livro;
 char nome[20] = "moby dick";
-int escolha;
+int escolhareview;
 int avaliacao;
 
     printf("digite o nome do livro\n");
@@ -37,26 +37,26 @@ int avaliacao;
      livro.nome[strcspn(livro.nome, "\n")] = '\0';
      printf("Nome digitado: %s\n", livro.nome);
 
-   if(strcmp(livro.nome,nome) !=0) {
+   if(strcmp(livro.nome,nome) !=0) { // condicao para verificar se o livro esta cadastrado
 
      printf("o livro nao foi encontrado. Deseja cadastra-lo?\n");
      printf("1- sim \n 2- nao");
-      scanf("%d", &escolha);
+      scanf("%d", &escolhareview);
 
-        if(escolha == 1) {
+        if(escolhareview == 1) {
             //levar para o cadastro;
         }
-           else if(escolha == 2) {
+           else if(escolhareview == 2) {
              //voltar para o menu;
            }   
-    }
+    } // saiu do if o livro foi encontrado
           printf("autor: %s\n", livro.autor);
           printf("ano de lancamento: %d\n", livro.ano);
 
             printf("avalie o livro (0-5)\n");
              scanf("%d", &avaliacao);
 
-              if( avaliacao > 5) {
+              if( avaliacao > 5) { //condicao para a avaliacao
                printf("avaliacao invalida, digite novamente");
                 printf("avalie o livro (0-5)\n");
                  scanf("%d", &avaliacao);
