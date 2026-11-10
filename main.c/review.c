@@ -3,9 +3,11 @@
 #include <string.h>
 
 struct info {
+    char genero[20];
     char nome[50];
     char autor[50];
     int ano;
+    int codigo;
 };
 
 void review() {
@@ -14,13 +16,20 @@ void review() {
     char nome[20] = "moby dick";
     int escolhareview;
     int avaliacao;
+    int codigo;
 
-    printf("Digite o nome do livro\n");
+    printf("Digite o nome do livro\n");           //digitar o nome
     fgets(livro.nome, sizeof(livro.nome), stdin);
     livro.nome[strcspn(livro.nome, "\n")] = '\0';
     printf("Nome digitado: %s\n", livro.nome);
 
-    if(strcmp(livro.nome, nome) != 0) {
+     printf("Digite o codigo do livro\n");      //digitar o codigo
+    fgets(livro.codigo, sizeof(livro.codigo), stdin);
+    livro.nome[strcspn(livro.codigo, "\n")] = '\0';
+    printf("Codigo digitado: %s\n", livro.codigo);
+
+
+    if(strcmp(livro.codigo, codigo) != 0) {   //verificar se ja existe um codigo
         printf("o livro nao foi encontrado. Deseja cadastra-lo?\n");
         printf("1- sim \n 2- nao\n");
         scanf("%d", &escolhareview);
@@ -33,6 +42,8 @@ void review() {
     }
     printf("autor: %s\n", livro.autor);
     printf("ano de lancamento: %d\n", livro.ano);
+    printf("genero: %s\n", livro.genero);
+    
 
     printf("avalie o livro (0-5)\n");
     scanf("%d", &avaliacao);
