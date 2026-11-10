@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <windows.h>
 
 struct info {
     char nome[50];
@@ -8,11 +9,17 @@ struct info {
     int ano;
 };
 
-// Protótipos das funções
-void biblioteca();
+void cadastrarLivro();
+void listaDesejos();
+void relatorio();
 void review();
+void buscarLivro();
 
 int main() {
+
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
     int escolha = 0;
     
     while(escolha != 6){
@@ -34,16 +41,16 @@ int main() {
                 review();
                 break;
             case 2:
-                // Função de novo cadastro
+                cadastrarLivro();
                 break;
             case 3:
-                // Listas de desejos
+                listaDesejos();
                 break;
             case 4:
                 // Minhas reviews
                 break;
             case 5:
-                // Relatório
+                relatorio();
                 break;
             case 6:
                 printf("Saindo do sistema...\n");
